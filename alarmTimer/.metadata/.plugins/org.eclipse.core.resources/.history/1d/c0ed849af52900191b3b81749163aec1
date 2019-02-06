@@ -1,0 +1,49 @@
+package alarm;
+
+
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 입력양식 yyyymmddhhmm		
+		Scanner scan = new Scanner(System.in);
+		String scon = scan.next();
+		// 년월일
+		String yyyymmdd = scon.substring(0,8);
+		// 시간분
+		String hhmm = scon.substring(8);
+		//System.out.println(yyyymmdd);
+		//System.out.println(hhmm);
+		
+		SimpleDateFormat format1 = new SimpleDateFormat ( "yyyyMMdd");
+		SimpleDateFormat format2 = new SimpleDateFormat ( "HHmm");
+		
+		String format_time1 = format1.format (System.currentTimeMillis());
+		String format_time2 = format2.format (System.currentTimeMillis());
+		
+		String predate = format1.toString(); 
+		String postdate = format1.toString();
+			
+		Timer m_timer = new Timer();
+		TimerTask m_task = new TimerTask() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				System.out.printf("찍혀요");
+			}
+					
+		};
+		m_timer.schedule(m_task, 5000);
+		
+			
+		
+		
+		
+	}
+
+}
