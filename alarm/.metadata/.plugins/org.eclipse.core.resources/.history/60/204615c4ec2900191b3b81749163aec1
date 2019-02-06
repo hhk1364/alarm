@@ -1,0 +1,20 @@
+package alarm;
+
+
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 입력양식 yyyymmddhhmm		
+		Scanner scan = new Scanner(System.in);
+		String scon = scan.next();
+		String yyyymmdd = scon.substring(0,8);
+		String hhmm = scon.substring(9);
+		System.out.println(yyyymmdd);
+		System.out.println(hhmm);
+		
+		
+	}
+
+}

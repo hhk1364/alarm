@@ -14,23 +14,25 @@ public class Main {
 		// 입력양식 yyyymmddhhmm		
 		Scanner scan = new Scanner(System.in);
 		String scon = scan.next();
-		long timmer = 0;
-		timmer = DateCalculator.datecalculator(scon);
+		
+		DateCalculator.datecalculator(scon);
 		
 		
 		Timer m_timer = new Timer();
 		TimerTask m_task = new TimerTask() {
 
-			@Override
-			public void run() {
+				@Override
+				public void run() {
 				// TODO Auto-generated method stub
-				PlaySound2.playsound();
-				
-				
-			}
+					if(DateCalculator.datecalculator(scon)) {
+							PlaySound2.playsound();
+							m_timer.cancel();
+					}
+				}
+		
 					
 		};
-		m_timer.schedule(m_task, timmer);
+		m_timer.schedule(m_task, 0, 1000);
 		
 			
 		
